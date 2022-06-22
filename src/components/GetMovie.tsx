@@ -8,14 +8,12 @@ interface IMovieProps {
 
 function GetMovie(props: IMovieProps) {
 
-    return (
-        <>
+    return (<>
             <h2>Movies</h2>
             <MoviesGetPopular />
             <MoviesGetTop />
             <MoviesGetLatest />
-        </>
-    );
+            </>);
 }
 
 export default GetMovie;
