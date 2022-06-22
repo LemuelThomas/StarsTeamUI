@@ -1,11 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React  from 'react';
 import './App.css';
-import Login from './components/Login';
+
+import Homepage from './components/Homepage';
+import GetMovie from './components/GetMovie';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <Login/>
+    <>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/movies' element={<GetMovie />} />
+      </Routes>
+    </>
   );
 }
 
