@@ -16,8 +16,7 @@ function GetMovie(props: IMovieProps) {
             <MoviesGetPopular />
             <MoviesGetTop />
             <MoviesGetLatest />
-        </>
-    );
+            </>);
 }
 
 export default GetMovie;
