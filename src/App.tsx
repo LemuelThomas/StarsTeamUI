@@ -1,13 +1,18 @@
 import React  from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Homepage from './components/Homepage';
+import GetMovie from './components/GetMovie';
+import { Route, Routes } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <Homepage />
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/movies' element={<GetMovie />} />
+      </Routes>
+    </>
   );
 }
 
