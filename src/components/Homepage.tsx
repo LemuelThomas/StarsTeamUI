@@ -1,7 +1,8 @@
 import React  from 'react'
 import axios from 'axios'
-import { useState, useEffect, FC } from 'react'
-
+import { useState, useEffect } from 'react'
+import GetMovie from './GetMovie';
+import { Link } from 'react-router-dom'
 
 interface IContentData {
   results: ContentDataType;
@@ -20,6 +21,7 @@ type ContentType = {
   title: string;
   name: string;
   poster_path: string;
+  backdrop_path: string;
 } 
 
 export default function Homepage() {
@@ -53,6 +55,7 @@ export default function Homepage() {
   return (
   <>
     <h1 className='home_title'>STARSTREAM</h1>
+    <Link to={'/movies'}>Movies</Link>
 
     <h3>Featured</h3>     
     <div className="content_container">
