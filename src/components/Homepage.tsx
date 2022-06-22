@@ -20,6 +20,7 @@ type ContentType = {
   title: string;
   name: string;
   poster_path: string;
+  backdrop_path: string;
 } 
 
 export default function Homepage() {
