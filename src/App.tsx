@@ -1,14 +1,20 @@
-import React from "react";
-//import logo from './logo.svg';
+import React  from 'react';
 import './App.css';
+
 import Homepage from './components/Homepage';
-import ProfileScreen from "./components/ProfileScreen";
+import GetMovie from './components/GetMovie';
+import { Route, Routes } from 'react-router-dom'
+import ProfileScreen from './components/ProfileScreen';
 
 function App() {
   return (
-    <div className="App">
-      <ProfileScreen />
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/profile' element={<ProfileScreen />} />
+        <Route path='/movies' element={<GetMovie />} />
+      </Routes>
+    </>
   );
 }
 
