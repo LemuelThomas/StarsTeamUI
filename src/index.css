@@ -93,3 +93,8 @@ code {
     font-weight: 600;
     cursor: pointer;
   }
+
+  .details_box {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,7 +1,5 @@
-import React  from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import GetMovie from './GetMovie';
 import { Link } from 'react-router-dom'
 
 
@@ -35,11 +33,15 @@ export default function Homepage() {
 
   useEffect(() => {
 
+    axios.get( `https://api.themoviedb.org/3/movie/157336?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`)
+    .then(res => {
+      console.log(res.data);
+    })
     axios.get(`
     https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`)
     .then(res => {
       setFeatured(res.data.results.slice(0,3))
-      console.log(res.data);
+      
     })
 
     axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`)
@@ -58,21 +60,24 @@ export default function Homepage() {
     <h1 className='home_title'>STARSTREAM</h1>
     <Link to={'/movies'}>Movies</Link>
     <Link to={'/register'}>Register</Link>
+    <Link to={'/login'}>Login</Link>
 
     <h3>Featured</h3>     
     <div className="content_container">
     {featured?.map((feat: ContentType) => (
       <>
       {feat.poster_path && (
-        <div key={feat.id} className='movie'>
-          <div className='title_box'>
-            <p>
-            {feat.name? feat.name : feat.title }
-            </p>
+        <Link to={`/movies/${feat.id}`}>
+          <div key={feat.id} className='movie'>
+            <div className='title_box'>
+              <p>
+              {feat.name? feat.name : feat.title }
+              </p>
+            </div>
+            <img src={`https://image.tmdb.org/t/p/w300${feat.poster_path
+            }`}alt="image" />
           </div>
-          <img src={`https://image.tmdb.org/t/p/w300${feat.poster_path
-          }`}alt="image" />
-        </div>
+        </Link>
       )}
       </>
       ))}
