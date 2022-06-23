@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import GetMovie from './GetMovie';
 import { Link } from 'react-router-dom'
 
+
 interface IContentData {
   results: ContentDataType;
 }
@@ -56,6 +57,7 @@ export default function Homepage() {
   <>
     <h1 className='home_title'>STARSTREAM</h1>
     <Link to={'/movies'}>Movies</Link>
+    <Link to={'/register'}>Register</Link>
 
     <h3>Featured</h3>     
     <div className="content_container">
