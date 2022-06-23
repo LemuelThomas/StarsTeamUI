@@ -125,8 +125,14 @@ code {
     cursor: pointer;
   }
 
+
 .table {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+  .details_box {
+    display: flex;
+    justify-content: space-between;
 }
