@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.profileScreen {
+  height: 100vh;
+  color: white;
+}
+
+.profileScreen_body {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8%;
+  max-width: 800px;
+}
+
+.profileScreen_info {
+  display: flex;
+}
+
+.profileScreen_info > img {
+  height: 100px;
+}
+
+img {
+  height: 400px;
+  width: 400px;
+}
+#image {
+  background: url(../public/images/585e4beacb11b227491c3399.png);
+  height: 400px;
+  width: 400px;
+}
