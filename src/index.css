@@ -11,6 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.profileScreen {
+  height: 100vh;
+  color: white;
+}
+
+.profileScreen_body {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8%;
+  max-width: 800px;
+}
+
+.profileScreen_info {
+  display: flex;
+}
+
+.profileScreen_info > img {
+  height: 100px;
+}
+
+
+.settings {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
 .login {
   position: relative;
   height:100%;
@@ -93,6 +124,13 @@ code {
     font-weight: 600;
     cursor: pointer;
   }
+
+
+.table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   .details_box {
     display: flex;

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ProfileScreen from './ProfileScreen';
 
 
 interface IContentData {
@@ -52,6 +53,7 @@ export default function Homepage() {
   }, [])
 
   return (
+
     <>
       <h1 className='home_title'>STARSTREAM</h1>
       <Link to={'/movies'}>Movies</Link>
