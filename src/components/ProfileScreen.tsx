@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,8 +9,12 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import {Link} from 'react-router-dom';
-interface IProfileSceenProps{
-
+import { createContext } from 'react';
+export interface IProfileSceenProps{
+    username: string,
+    UID: number,
+    FN: string,
+    LN: string,
 }
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -34,14 +37,22 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   }));
   
   function createData(
-    name: string,
+    username: string,
     UID: number,
     FN: string,
     LN: string,
   ) {
-    return { name, UID, FN, LN};
+    return { username, UID, FN, LN};
   }
   
+
+  export type makeData={
+    username: string,
+    UID: number,
+    FN: string,
+    LN: string,
+  }
+
   const rows = [
     createData('User1', 1, 'Lemuel', 'Thomas'),
     createData('User2', 2, 'Josue', 'Luna'),
@@ -50,7 +61,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     createData('User5', 5, 'Andre', 'Jefferson'),
     createData('User6', 6, 'Colin', 'Buckley'),
   ];
-function ProfileScreen(props: IProfileSceenProps) {
+
+  
+  
+function ProfileScreen() {
 
     return (
     <>
@@ -78,14 +92,15 @@ function ProfileScreen(props: IProfileSceenProps) {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            // <Link to={`/profile/${row.UID}`}
-            <StyledTableRow key={row.name}>
+            
+            <StyledTableRow key={row.username}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {row.username}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.UID}</StyledTableCell>
-              <StyledTableCell align="right">{row.FN}</StyledTableCell>
-              <StyledTableCell align="right">{row.LN}</StyledTableCell>
+              
+                <StyledTableCell align="right">{row.UID}</StyledTableCell>
+                <StyledTableCell align="right">{row.FN}</StyledTableCell>
+                <StyledTableCell align="right">{row.LN}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
