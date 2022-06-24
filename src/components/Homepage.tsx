@@ -59,6 +59,8 @@ export default function Homepage() {
       <Link to={'/movies'}>Movies</Link>
       <Link to={'/register'}>Register</Link>
       <Link to={'/login'}>Login</Link>
+      <Link to={'/profile'}>Profile</Link>
+      
 
       <h3>Featured</h3>
       <div className="content_container">

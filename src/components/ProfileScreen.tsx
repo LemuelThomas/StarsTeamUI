@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-
+import {Link} from 'react-router-dom';
 interface IProfileSceenProps{
 
 }
@@ -59,7 +59,10 @@ function ProfileScreen(props: IProfileSceenProps) {
             <div className="profileScreen_body">
                 <div className="settings">
                 <Stack direction="row" spacing={2}>
+                  <Link to={'/Settings'} >
                     <Button href="#text-buttons">Settings</Button>
+                  </Link>
+                    
                 </Stack>
                 </div>
                 <div className = "profileScreen_info">
@@ -75,6 +78,7 @@ function ProfileScreen(props: IProfileSceenProps) {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
+            // <Link to={`/profile/${row.UID}`}
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row.name}
