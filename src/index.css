@@ -34,13 +34,21 @@ code {
 .profileScreen_info > img {
   height: 100px;
 }
-
+.settingsHead{
+  text-decoration: underline;
+}
 
 .settings {
   position: absolute;
   top: 8px;
   right: 16px;
   font-size: 18px;
+}
+.Settingsbody{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
 }
 .login {
   position: relative;
