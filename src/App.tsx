@@ -9,7 +9,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import MovieDetails from './components/MovieDetails';
 import TvDetails from './components/TvDetails';
-
+import Settings from './components/Settings';
 
 function App() {
   return (
@@ -17,11 +17,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/profile' element={<ProfileScreen />} />
+        {/* <Route path='/profile/:id' element={<ProfileScreen />} /> */}
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/settings' element={<Settings/>} />
         <Route path='/movies' element={<GetMovie />} />
         <Route path='/movies/:id' element={<MovieDetails />} />
         <Route path='/shows/:id' element={<TvDetails />} />
+        
       </Routes>
     </>
   );
