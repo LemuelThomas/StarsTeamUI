@@ -21,6 +21,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/settings' element={<Settings/>} />
+        <Route path='/settings/:id' element={<Settings/>} />
         <Route path='/movies' element={<GetMovie />} />
         <Route path='/movies/:id' element={<MovieDetails />} />
         <Route path='/shows/:id' element={<TvDetails />} />
