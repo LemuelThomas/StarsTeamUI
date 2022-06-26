@@ -5,16 +5,13 @@ newfaqs.id = 1;
 newfaqs.question_text = " What are the keys to the universe?\n";
 newfaqs.answer_text = " \nGet money.";
 
-let newusermap = [
-  newfaqs.getId(),
-  newfaqs.getQuestions(),
-  newfaqs.getAnswers(),
-];
+let newfaqsmap = [newfaqs.id, newfaqs.id, newfaqs.id];
+
 function Display_FAQs() {
   //debugging function.
   return (
     <>
-      {newfaqs.getFAQs()}
+      {newfaqsmap.push(newfaqs.getmorefqs())}
       <br></br>
     </>
   );
