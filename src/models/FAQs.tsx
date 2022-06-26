@@ -1,3 +1,6 @@
+import { render } from "@testing-library/react";
+import { useState } from "react";
+
 export class FAQs {
   id: number | undefined;
   question_text: string | undefined | " ";
@@ -13,11 +16,17 @@ export class FAQs {
     return this.answer_text;
   }
 
-  getFAQ([]) {
+  setFAQs([]) {
     let a = [];
     a.push(this.getId());
     a.push(this.getQuestions());
     a.push(this.getAnswers());
     return <div>{a}</div>;
   }
+
+  getFAQs = async () => {
+    const getfaqs = await fetch("http://localhost:8080/test");
+    console.log(await getfaqs.text());
+    return [];
+  };
 }

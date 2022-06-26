@@ -14,7 +14,7 @@ function Display_FAQs() {
   //debugging function.
   return (
     <>
-      <div className="question">{newfaqs.getFAQ(newusermap)}</div>
+      {newfaqs.getFAQs()}
       <br></br>
     </>
   );
