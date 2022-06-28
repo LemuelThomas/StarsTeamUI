@@ -15,3 +15,13 @@ h1 {
 .title_box {
   height: 2.7rem;
 }
+
+.bottombar {
+  color: aliceblue;
+  background-color: rgb(33, 15, 15);
+}
+
+.headerbar {
+  color: aliceblue;
+  background-color: black;
+}
