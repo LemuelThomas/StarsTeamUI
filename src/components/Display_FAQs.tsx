@@ -1,5 +1,4 @@
 import { FAQs, IFAQs } from "../models/FAQs";
-import PromisePool from "@supercharge/promise-pool";
 import { useEffect, useState } from "react";
 
 let newfaqs = new FAQs();
