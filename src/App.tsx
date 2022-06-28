@@ -1,6 +1,6 @@
+import "./App.css";
+import Display_FAQs from "./components/Display_FAQs";
 import React  from 'react';
-import './App.css';
-
 import Homepage from './components/Homepage';
 import GetMovie from './components/GetMovie';
 import { Route, Routes } from 'react-router-dom'
@@ -25,7 +25,7 @@ function App() {
         <Route path='/movies' element={<GetMovie />} />
         <Route path='/movies/:id' element={<MovieDetails />} />
         <Route path='/shows/:id' element={<TvDetails />} />
-        
+        <Route path='/faqs' element={<Display_FAQs />} />
       </Routes>
     </>
   );
