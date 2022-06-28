@@ -1,7 +1,9 @@
+import { shouldForwardProp } from '@mui/styled-engine';
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProfileScreen from './ProfileScreen';
+
 
 
 interface IContentData {
@@ -61,7 +63,6 @@ export default function Homepage() {
       <Link to={'/login'}>Login</Link>
       <Link to={'/profile'}>Profile</Link>
       <Link to={'/shows'}>Shows</Link>
-      
 
       <h3>Featured</h3>
       <div className="content_container">
@@ -69,32 +70,32 @@ export default function Homepage() {
           <>
             {feat.poster_path && (
               <>
-                {feat.title ? 
-                <Link to={`/movies/${feat.id}`}>
-                <div key={feat.id} className='movie'>
-                  <div className='title_box'>
-                    <p>
-                      {feat.title}
-                    </p>
-                  </div>
-                  <img src={`https://image.tmdb.org/t/p/w300${feat.poster_path
-                    }`} alt="image" />
-                </div>
-              </Link>
-                : 
-                <Link to={`/shows/${feat.id}`}>
-                <div key={feat.id} className='movie'>
-                  <div className='title_box'>
-                    <p>
-                      {feat.name}
-                    </p>
-                  </div>
-                  <img src={`https://image.tmdb.org/t/p/w300${feat.poster_path
-                    }`} alt="image" />
-                </div>
-              </Link>
+                {feat.title ?
+                  <Link to={`/movies/${feat.id}`}>
+                    <div key={feat.id} className='movie'>
+                      <div className='title_box'>
+                        <p>
+                          {feat.title}
+                        </p>
+                      </div>
+                      <img src={`https://image.tmdb.org/t/p/w300${feat.poster_path
+                        }`} alt="image" />
+                    </div>
+                  </Link>
+                  :
+                  <Link to={`/shows/${feat.id}`}>
+                    <div key={feat.id} className='movie'>
+                      <div className='title_box'>
+                        <p>
+                          {feat.name}
+                        </p>
+                      </div>
+                      <img src={`https://image.tmdb.org/t/p/w300${feat.poster_path
+                        }`} alt="image" />
+                    </div>
+                  </Link>
                 }
-                
+
               </>
             )}
           </>
@@ -141,3 +142,4 @@ export default function Homepage() {
     </>
   )
 }
+
