@@ -2,6 +2,7 @@ import React  from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import GetMovie from './GetMovie';
+
 import { Link } from 'react-router-dom'
 
 interface IContentData {
@@ -56,6 +57,7 @@ export default function Homepage() {
   <>
     <h1 className='home_title'>STARSTREAM</h1>
     <Link to={'/movies'}>Movies</Link>
+
 
     <h3>Featured</h3>     
     <div className="content_container">

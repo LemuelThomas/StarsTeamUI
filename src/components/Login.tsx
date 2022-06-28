@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Login() {
@@ -10,11 +11,18 @@ function Login() {
                 className="login_logo"
                 src="https://images.indianexpress.com/2021/04/pixabay_shooting-star_1200.jpg" 
                 alt="" 
-                />
-        <button onClick={() => setSignIn(true)}
+             />
+
+            <Link to={"/register"}> 
+            
+            <button
          className="login_button">
-        Sign In
+       Register
         </button>
+           
+            </Link>
+
+        
         <div className="login_gradient" />
         
         </div>
@@ -37,7 +45,7 @@ function Login() {
             />
             <button 
             onClick={() => setSignIn(true )}
-            className='login_getStarted'>Get Started</button>
+            className='login_getStarted'>Login</button>
 
         </form>
         </>
