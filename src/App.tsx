@@ -1,18 +1,33 @@
 import "./App.css";
 import Display_FAQs from "./components/Display_FAQs";
-import Homepage from "./components/Homepage";
+import React  from 'react';
+import Homepage from './components/Homepage';
+import GetMovie from './components/GetMovie';
+import { Route, Routes } from 'react-router-dom'
+import ProfileScreen from './components/ProfileScreen';
+import Register from './components/Register';
+import Login from './components/Login';
+import MovieDetails from './components/MovieDetails';
+import TvDetails from './components/TvDetails';
+import Settings from './components/Settings';
 
 function App() {
   return (
-    <div className="App">
-      <Homepage />
-    </div>
-
-    // <>
-    //   <div>
-    //     <Display_FAQs />
-    //   </div>
-    // </>
+    <>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/profile' element={<ProfileScreen />} />
+        {/* <Route path='/profile/:id' element={<ProfileScreen />} /> */}
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/settings' element={<Settings/>} />
+        <Route path='/settings/:id' element={<Settings/>} />
+        <Route path='/movies' element={<GetMovie />} />
+        <Route path='/movies/:id' element={<MovieDetails />} />
+        <Route path='/shows/:id' element={<TvDetails />} />
+        <Route path='/faqs' element={<Display_FAQs />} />
+      </Routes>
+    </>
   );
 }
 
