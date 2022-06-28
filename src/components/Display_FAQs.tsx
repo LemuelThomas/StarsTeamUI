@@ -1,4 +1,4 @@
-import { FAQs, IFAQs } from "../models/FAQs";
+import { FAQs, getFAQs, IFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
 
 let newfaqs = new FAQs();
@@ -21,8 +21,6 @@ newfaqs_1.answer_text =
 
 function Display_FAQs() {
   //-- casting the onject from an interface to a state.
-  //const [FAQs, setFAQs] = useState<IFAQs[]>([]);
-
   const [FAQs, setFAQs] = useState([] as IFAQs[]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")

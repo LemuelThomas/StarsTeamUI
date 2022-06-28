@@ -45,4 +45,4 @@ export const getFAQs = async (): Promise<IFAQs> => {
   return await listResp.json();
 };
 
-//FAQs.getFAQs();
+FAQs.getFAQs();
