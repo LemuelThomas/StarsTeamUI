@@ -6,7 +6,7 @@ function ShowsOnTv(props: {}) {
     const [shows, setShows] = useState([] as TvData[]);
     
     useEffect(()=>{
-        fetch(`https://api.themoviedb.org/3/tv/on_tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`, {
+        fetch(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`, {
             method: 'GET'
         }).then(resp => resp.json()).then(data => (
            // setShows(data.results as unknown as TvData[])
@@ -16,8 +16,8 @@ function ShowsOnTv(props: {}) {
     }, []);
 
   return (<>
-        <h3>On TV</h3>
-        <div className='content_container'>
+        <div className='header'><h3>On TV</h3></div>
+        <div className='content_container2'>
                 {shows.map((show, idx) => {
                     return(<>
                         {show.poster_path && (

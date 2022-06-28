@@ -15,8 +15,8 @@ function ShowsPopular(props: {}) {
     }, []);
 
   return (<>
-        <h3>Popular</h3>
-        <div className='content_container'>
+        <div className='header'><h3>Popular</h3></div>
+        <div className='content_container2'>
                 {shows.map((show, idx) => {
                     return(<>
                         {show.poster_path && (
