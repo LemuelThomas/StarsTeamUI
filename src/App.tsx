@@ -10,6 +10,7 @@ import Login from './components/Login';
 import MovieDetails from './components/MovieDetails';
 import TvDetails from './components/TvDetails';
 import Settings from './components/Settings';
+import Shows from './components/Shows';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/movies' element={<GetMovie />} />
         <Route path='/movies/:id' element={<MovieDetails />} />
         <Route path='/shows/:id' element={<TvDetails />} />
+        <Route path='/shows' element={<Shows />} />
         <Route path='/faqs' element={<Display_FAQs />} />
       </Routes>
     </>

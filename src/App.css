@@ -8,12 +8,57 @@ h1 {
   justify-content: space-evenly;
 }
 
+.content_container2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  border: 1em;
+  margin: 0;
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  color: whitesmoke;
+  background-color: black;
+}
+
+.content_container2::-webkit-scrollbar {
+  display: none;
+}
+
 .movie {
+  padding-left: 1em;
+  padding-right: 0;
   width: min-content;
+  height: min-content;
+}
+
+.title {
+  text-align: center;
+  color: whitesmoke;
+  background-color: black;
+  margin-top: 0;
+}
+
+.link {
+  align-items: left;
+  justify-content: space-evenly;
+  padding-top: 1em;
+  margin-bottom: 0;
+  background-color: black;
+  color: whitesmoke;
+}
+
+.header {
+  color: whitesmoke;
+  background-color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
 }
 
 .title_box {
   height: 2.7rem;
+  margin: 0;
 }
 
 .bottombar {
