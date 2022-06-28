@@ -2,6 +2,7 @@ import { shouldForwardProp } from '@mui/styled-engine';
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ProfileScreen from './ProfileScreen';
 
 
 
@@ -61,7 +62,6 @@ export default function Homepage() {
       <Link to={'/register'}>Register</Link>
       <Link to={'/login'}>Login</Link>
       <Link to={'/profile'}>Profile</Link>
-
 
       <h3>Featured</h3>
       <div className="content_container">
