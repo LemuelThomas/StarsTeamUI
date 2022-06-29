@@ -1,7 +1,8 @@
 import "./App.css";
 import Display_FAQs from "./components/Display_FAQs";
 import React  from 'react';
-import Homepage from './components/Homepage';
+import Homepage from "./components/Homepage";
+import Nav from './components/Nav';
 import GetMovie from './components/GetMovie';
 import { Route, Routes } from 'react-router-dom'
 import ProfileScreen from './components/ProfileScreen';
@@ -12,9 +13,13 @@ import TvDetails from './components/TvDetails';
 import Settings from './components/Settings';
 import Shows from './components/Shows';
 
-function App() {
+
+function App(): JSX.Element {
   return (
     <>
+  <Nav/> 
+
+    
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/profile' element={<ProfileScreen />} />
@@ -24,6 +29,8 @@ function App() {
         <Route path='/settings' element={<Settings/>} />
         <Route path='/settings/:id' element={<Settings/>} />
         <Route path='/movies' element={<GetMovie />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/movies/:id' element={<MovieDetails />} />
         <Route path='/shows/:id' element={<TvDetails />} />
         <Route path='/shows' element={<Shows />} />
