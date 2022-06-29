@@ -1,5 +1,6 @@
 import { SyntheticEvent, useState } from "react";
 import { RegisterFormUser } from "../models/register-form-user";
+import { Link } from 'react-router-dom' 
 
 function Register(props: {}) {
 
@@ -41,6 +42,8 @@ function Register(props: {}) {
 
     return(<>
         <h4>Register</h4>
+        <Link to={'/'}>Homepage</Link>
+
         <hr></hr>
         <fieldset>
             <div className="reg-container">
