@@ -28,21 +28,4 @@ export class FAQs {
   getAnswers() {
     return this.answer_text;
   }
-
-  static getFAQs = async () => {
-    console.log("This is a static function.");
-    return Promise.resolve(
-      fetch("https://jsonplaceholder.typicode.com/todos")
-        .then((res) => res.json())
-        .then((data: FAQs) => console.log(data))
-    );
-  };
 }
-
-export const getFAQs = async (): Promise<IFAQs> => {
-  const listResp = await fetch("https://jsonplaceholder.typicode.com/todos");
-
-  return await listResp.json();
-};
-
-FAQs.getFAQs();

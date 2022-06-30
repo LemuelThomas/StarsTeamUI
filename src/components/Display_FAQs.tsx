@@ -1,4 +1,4 @@
-import { FAQs, getFAQs, IFAQs } from "../models/FAQs";
+import { FAQs, IFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
 
 let newfaqs = new FAQs();
