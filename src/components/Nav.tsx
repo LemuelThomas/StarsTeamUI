@@ -68,7 +68,7 @@ function Nav() {
                 />
                 <img
                     className="nav_avatar"
-                    src="https://www.pngitem.com/pimgs/m/421-4212266_transparent-default-avatar-png-default-avatar-images-png.png"
+                    src=""
                     alt=""
                 />
 

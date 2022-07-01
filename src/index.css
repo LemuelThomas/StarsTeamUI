@@ -148,6 +148,7 @@ code {
 .nav_contents { 
     display: flex;
     justify-content: space-between;
+    margin-top: 100px;
 }
 
 .nav_logo {
@@ -159,13 +160,13 @@ code {
     cursor: pointer;
 }
 
-.nav_avatar {
+/* .nav_avatar {
     cursor: pointer;
     position: fixed;
     right: 20px;
     width: 30px;
     height: 30px;
-}
+} */
 
 .Search {
   margin-right: 0px;
