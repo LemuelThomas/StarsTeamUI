@@ -16,6 +16,7 @@ import Shows from "./components/Shows";
 function App(): JSX.Element {
   return (
     <>
+    
       {/* <Nav /> */}
 
       <Routes>
