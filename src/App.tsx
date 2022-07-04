@@ -12,6 +12,7 @@ import MovieDetails from "./components/MovieDetails";
 import TvDetails from "./components/TvDetails";
 import Settings from "./components/Settings";
 import Shows from "./components/Shows";
+import WatchList from "./components/WatchList";
 
 function App(): JSX.Element {
   return (
@@ -33,6 +34,7 @@ function App(): JSX.Element {
         <Route path="/shows/:id" element={<TvDetails />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/faqs" element={<Display_FAQs />} />
+        <Route path="/watchlist" element={<WatchList />} />
       </Routes>
     </>
   );

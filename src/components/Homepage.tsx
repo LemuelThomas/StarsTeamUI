@@ -64,6 +64,7 @@ export default function Homepage() {
       <Link to={'/login'}>Login</Link>
       <Link to={'/profile'}>Profile</Link>
       <Link to={'/shows'}>Shows</Link>
+      <Link to={'/watchlist'}>Watch List</Link> 
 
       <h3>Featured</h3>
       <div className="content_container">
