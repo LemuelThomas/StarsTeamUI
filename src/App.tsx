@@ -34,7 +34,7 @@ function App(): JSX.Element {
         <Route path="/shows/:id" element={<TvDetails />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/faqs" element={<Display_FAQs />} />
-        <Route path="/watchlist" element={<WatchList />} />
+        <Route path="/watchlist" element={<WatchList id={1}/>} />
       </Routes>
     </>
   );
