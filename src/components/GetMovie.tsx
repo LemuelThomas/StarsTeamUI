@@ -1,15 +1,17 @@
 import MoviesGetLatest from "./MoviesGetLatest";
 import MoviesGetPopular from "./MoviesGetPopular";
 import MoviesGetTop from "./MoviesGetTop";
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { LoggedInUserType } from "../models/logged-in-user";
 
 interface IMovieProps {
-
+    currentUser: LoggedInUserType | undefined
 }
 
 function GetMovie(props: IMovieProps) {
 
     return (
+        !props.currentUser ? <Navigate to="/login"/> :
         <>
             <Link to={'/'}>Homepage</Link>
             <Link to={'/register'}>Register</Link>
