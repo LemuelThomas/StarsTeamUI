@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, Navigate } from 'react-router-dom'
+import { LoggedInUserType } from '../models/logged-in-user';
 
 
 type Props = {
@@ -13,8 +14,12 @@ type Props = {
   videos: [];
 }
 
+interface ITvProps {
+  currentUser: LoggedInUserType | undefined
+}
 
-export default function TvDetails() {
+
+export default function TvDetails(props: ITvProps) {
   
     const {id} = useParams()
       
@@ -33,6 +38,7 @@ export default function TvDetails() {
   }, []) 
   
   return (
+    !props.currentUser ? <Navigate to="/login"/> :
     <>
     <Link to={'/'}>Homepage</Link>
       <h2>TV Show Details</h2>

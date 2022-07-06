@@ -1,24 +1,16 @@
-import React from 'react'
+import { Navigate } from 'react-router-dom'
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
-import { createContext, useContext } from 'react';
-// type Props = {
-   
-// }
+import { LoggedInUserType } from '../models/logged-in-user';
 
-// export default function Settings({}: Props) {
-//   return (
-//     <div>
-//         <h1>Setting</h1>
-//     </div>
-//   )
-// }
+interface ISettingsProps {
+    currentUser: LoggedInUserType| undefined
+  }
 
 
-
-export default function Settings(props: {}){
+export default function Settings(props: ISettingsProps){
     return (
+        !props.currentUser ? <Navigate to="/login"/> :
         <>
             <div className = 'settingsHead'>
                 <h1>Settings</h1>

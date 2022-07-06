@@ -2,10 +2,17 @@ import ShowsPopular from "./ShowsPopular";
 import ShowsAiring from "./ShowsAiring";
 import ShowsOnTv from "./ShowsOnTv";
 import ShowsTopRated from "./ShowsTopRated";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { LoggedInUserType } from "../models/logged-in-user";
 
-function getAllTvShows (props: {}) {
-    return(<>
+interface IShowsProps {
+    currentUser: LoggedInUserType | undefined
+  }
+
+function getAllTvShows (props: IShowsProps) {
+    return(
+        !props.currentUser ? <Navigate to="/login"/> :
+    <>
         <div className="link">
             <Link to={'/'}>Homepage </Link>
             <Link to={'/movies'}>Movies </Link>
