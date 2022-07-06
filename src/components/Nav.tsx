@@ -1,79 +1,59 @@
-import React, { SyntheticEvent, useState, useEffect } from "react";
-import GetMovie from "./GetMovie";
-import MoviesGetLatest from "./MoviesGetLatest";
-import MoviesGetTop from "./MoviesGetTop";
-import MoviesGetPopular from "./MoviesGetPopular";
-import { Link } from "react-router-dom";
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import MoreIcon from '@mui/icons-material/MoreVert';
 
-type ContentType = {
-    id: number;
-    title: string;
-    name: string;
-    poster_path: string;
-    backdrop_path: string;
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  alignItems: 'flex-start',
+  paddingTop: theme.spacing(1),
+  paddingBottom: theme.spacing(2),
+  // Override media queries injected by theme.mixins.toolbar
+  '@media all': {
+    minHeight: 128,
+  },
+}));
+
+export default function ProminentAppBar() {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <StyledToolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+            MUI
+          </Typography>
+          <IconButton size="large" aria-label="search" color="inherit">
+            <SearchIcon />
+          </IconButton>
+          <IconButton
+            size="large"
+            aria-label="display more actions"
+            edge="end"
+            color="inherit"
+          >
+            <MoreIcon />
+          </IconButton>
+        </StyledToolbar>
+      </AppBar>
+    </Box>
+  );
 }
-function Nav() {
-   
-    const [show, handleShow] = useState(false);
-    const [queryData, setQueryData] = useState<string>()
-    const [searchData, setSearchData] = useState<ContentType[]>([])
-    
-    function handleChange(e: SyntheticEvent) {
-        const value=(e.target as HTMLInputElement).value;
-
-    setQueryData(value)
-    }
-    
-    function handleSearch(e: SyntheticEvent) {
-        fetch(`https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&query=${queryData}`)
-        .then(resp => resp.json()).then(data => (
-         //       setSearchData(data.results as unknown as ContentType[])
-        
-           console.log(data.results)
-            ));
-
-    }
-    
-    
-    
-    const transitionNavbar = () => {
-        if (window.scrollY > 100) {
-            handleShow(true);
-        }
-        else {
-            handleShow(false)
-        }
-    }
-    useEffect(() => {
-        window.addEventListener("scroll", transitionNavbar);
-        return () => window.removeEventListener("scroll", transitionNavbar);
-    }, []);
-    
-        
-    return (
-        
-        <div className=''>
-
-            <div className="nav_contents">
-
-                <div className="Search">
-                    <input type="text" placeholder="Search..." name="query" onChange={handleChange}/> 
-                    <button onClick={handleSearch}>Search</button>
-
-                </div>
-                <img
-                    className="nav_logo"
-                    src=""
-                    alt=""
-                />
-                <img
-                    className="nav_avatar"
-                    src="https://www.pngitem.com/pimgs/m/421-4212266_transparent-default-avatar-png-default-avatar-images-png.png"
-                    alt=""
-                />
-
-            </div>
-        </div>
-
-    )}
-    export default Nav;

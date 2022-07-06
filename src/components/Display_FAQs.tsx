@@ -1,4 +1,4 @@
-import { FAQs, getFAQs, IFAQs } from "../models/FAQs";
+import { FAQs, IFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
 import { LoggedInUserType } from "../models/logged-in-user";
 import { Navigate } from 'react-router-dom'

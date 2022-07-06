@@ -57,6 +57,7 @@ export default function Homepage(props: IHomepageProps) {
       <Link to={'/profile'}>Profile</Link>
       <Link to={'/shows'}>Shows</Link>
       <Link to={'/faqs'}>Faq's</Link>
+      <Link to={'/watchlist'}>Watch List</Link> 
 
       <h3>Featured</h3>
       <div className="content_container">

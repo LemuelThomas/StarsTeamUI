@@ -12,6 +12,7 @@ import MovieDetails from './components/MovieDetails';
 import TvDetails from './components/TvDetails';
 import Settings from './components/Settings';
 import Shows from './components/Shows';
+import WatchList from "./components/WatchList";
 import { LoggedInUserType } from "./models/logged-in-user";
 
 
@@ -21,7 +22,6 @@ function App(): JSX.Element {
 
   return (
     <>
-  <Nav/> 
 
       <Routes>
         <Route path='/' element={<Homepage  currentUser={authUser} />} />
@@ -35,6 +35,7 @@ function App(): JSX.Element {
         <Route path='/shows' element={<Shows currentUser={authUser} />} />
         <Route path='/shows/:id' element={<TvDetails currentUser={authUser} />} />
         <Route path='/faqs' element={<Display_FAQs currentUser={authUser} />} />
+        <Route path='/watchlist' element={<WatchList id={1} currentUser={authUser} />} />
       </Routes>
     </>
   );
