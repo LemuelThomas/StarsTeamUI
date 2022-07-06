@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { addMovieWatchList } from "../functions/watchlist";
 import { Movie } from "../models/Movie";
 
 interface IMovieProps {
@@ -7,6 +8,8 @@ interface IMovieProps {
 
 function MoviesGetLatest(props: IMovieProps) {
 
+    // replace with logged in users id
+    let userId:number = 1;
     const [Movies, setMovies] = useState([] as Movie[]);
 
     useEffect(()=>{
@@ -30,7 +33,7 @@ function MoviesGetLatest(props: IMovieProps) {
             <div className="content_container">
                 {Movies.map((Movie, idx) => {
                     return (
-                        <div key={idx} className='movie'>
+                        <div key={idx} className='movie' onClick={()=>addMovieWatchList(userId,Movie.id,Movie.genre_ids)}>
                             <div className='title_box'>
                             <p>{Movie.title}</p>
                             </div>
