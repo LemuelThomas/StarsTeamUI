@@ -49,7 +49,7 @@ function Login(props: ILoginProps) {
         }  
     }
 
-    console.log(email, password)
+    console.log(props.currentUser)
 
     return (
         props.currentUser ? <Navigate to="/"/> :

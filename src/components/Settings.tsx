@@ -6,7 +6,7 @@ import { GlobalContext } from './GlobalState';
 import Register from './Register';
 import { RegisterFormUser } from '../models/register-form-user';
 import { LoggedInUserType } from '../models/logged-in-user';
-
+import {Navigate} from 'react-router-dom';
 // class MainAccs{
 //     private accId: number;
 //     private firstName: string;
@@ -30,7 +30,7 @@ interface ISettingsProps {
     currentUser: LoggedInUserType | undefined
   }
 
-export default function Settings(props: {}){
+export default function Settings(props: ISettingsProps){
     const user = useContext(GlobalContext)
     const [MainAccData, setMainAccData] =
     useState({
@@ -52,6 +52,7 @@ export default function Settings(props: {}){
     // }, []);
     
     return (
+        !props.currentUser ? <Navigate to="/login"/> :
         // const loggedInUser = user.map(({firstName, lastName, age, email, password}: RegisterFormUser) => (
             <>
             <div className = 'settingsHead'>

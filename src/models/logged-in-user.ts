@@ -1,4 +1,9 @@
 export type LoggedInUserType = {
-  email: string;
-  password: string;
+  authId: number;
+  authFirstName: string;
+  authLastName: string;
+  authEmail: string;
+  authPassword: string;
+  authAge: Date;
+  authSubscription: number;
 }

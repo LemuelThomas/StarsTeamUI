@@ -14,10 +14,8 @@ import { LoggedInUserType } from '../models/logged-in-user';
 
 
 export interface IProfileSceenProps{
-    username: string,
     UID: number,
-    FN: string,
-    LN: string,
+    username: string
 }
 
 interface IProfileProps {
@@ -45,29 +43,21 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   }));
   
   function createData(
-    username: string,
     UID: number,
-    FN: string,
-    LN: string,
+    username: string,
   ) {
-    return { username, UID, FN, LN};
+    return {UID, username};
   }
   
 
   export type makeData={
-    username: string,
     UID: number,
-    FN: string,
-    LN: string,
+    username: string
   }
 
   const rows = [
-    createData('User1', 1, 'Lemuel', 'Thomas'),
-    createData('User2', 2, 'Josue', 'Luna'),
-    createData('User3', 3, 'Gerard', 'Paul'),
-    createData('User4', 4, 'Trevor', 'Mwangi'),
-    createData('User5', 5, 'Andre', 'Jefferson'),
-    createData('User6', 6, 'Colin', 'Buckley'),
+    createData(1, 'Brother-D'),
+    createData(2, 'Aunty')
   ];
 
   
@@ -93,23 +83,21 @@ function ProfileScreen(props: IProfileProps) {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>User</StyledTableCell>
-            <StyledTableCell align="right">Account ID</StyledTableCell>
-            <StyledTableCell align="right">First Name&nbsp;</StyledTableCell>
-            <StyledTableCell align="right">Last Name&nbsp;</StyledTableCell>
+            <StyledTableCell>User ID</StyledTableCell>
+            <StyledTableCell align="left">Username</StyledTableCell>
+            {/* <StyledTableCell align="right">First Name&nbsp;</StyledTableCell>
+            <StyledTableCell align="right">Last Name&nbsp;</StyledTableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             
-            <StyledTableRow key={row.username}>
+            <StyledTableRow key={row.UID}>
               <StyledTableCell component="th" scope="row">
-                {row.username}
+                {row.UID}
               </StyledTableCell>
-              
-                <StyledTableCell align="right">{row.UID}</StyledTableCell>
-                <StyledTableCell align="right">{row.FN}</StyledTableCell>
-                <StyledTableCell align="right">{row.LN}</StyledTableCell>
+                {/* <StyledTableCell align="right">{row.UID}</StyledTableCell> */}
+                <StyledTableCell align="left">{row.username}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
