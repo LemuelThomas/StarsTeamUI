@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -17,3 +18,19 @@ root.render(
     </GlobalProvider>
   // </React.StrictMode>
 );
+=======
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+root.render(
+    <Router>
+      <App/>
+    </Router>
+);
+>>>>>>> 3aabb0514963b4287b54d73dc2ccfb4643f909a9

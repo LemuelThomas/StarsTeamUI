@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react'
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import { number, string } from 'yargs';
 import { GlobalContext } from './GlobalState';
 import Register from './Register';
 import { RegisterFormUser } from '../models/register-form-user';
+import { LoggedInUserType } from '../models/logged-in-user';
 
 // class MainAccs{
 //     private accId: number;
@@ -26,7 +26,9 @@ import { RegisterFormUser } from '../models/register-form-user';
 //         this.Subscription = Subscription;
 //     }  
 // }
-
+interface ISettingsProps {
+    currentUser: LoggedInUserType | undefined
+  }
 
 export default function Settings(props: {}){
     const user = useContext(GlobalContext)
