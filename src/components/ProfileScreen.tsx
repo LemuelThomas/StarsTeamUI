@@ -8,14 +8,22 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import {Link} from 'react-router-dom';
+import {Link, Navigate } from 'react-router-dom';
 import { createContext } from 'react';
+import { LoggedInUserType } from '../models/logged-in-user';
+
+
 export interface IProfileSceenProps{
     username: string,
     UID: number,
     FN: string,
     LN: string,
 }
+
+interface IProfileProps {
+  currentUser: LoggedInUserType | undefined
+}
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -64,9 +72,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
   
   
-function ProfileScreen() {
+function ProfileScreen(props: IProfileProps) {
 
     return (
+      !props.currentUser ? <Navigate to="/login"/> :
     <>
             
         <div className='profilescreen'>
