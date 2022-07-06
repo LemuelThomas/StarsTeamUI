@@ -18,7 +18,7 @@ function App(): JSX.Element {
   return (
     <>
 
-  <Nav/> 
+  <Nav /> 
     
       <Routes>
         <Route path='/' element={<Homepage />} />
