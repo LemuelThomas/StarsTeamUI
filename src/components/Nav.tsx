@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {SyntheticEvent} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,16 +16,16 @@ import { Link } from 'react-router-dom';
 
 
 const pages = ['Homepage', 'Shows', 'Settings'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Account', 'Movies', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = (event:SyntheticEvent) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  const handleOpenUserMenu = (event:SyntheticEvent) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -38,7 +38,8 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
+   
+   <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -95,6 +96,21 @@ const ResponsiveAppBar = () => {
                       <Link style={{textDecoration: "none", color: "white"}} to ={`/${page}`}>
                       {page}
                   </Link>
+                  <li> 
+                      <Link to='/'>Homepage</Link>
+                  </li>
+                  <li>
+                      <Link to='/register'>Register</Link>
+                  </li>
+                  <li>
+                      <Link to='/login'>Login</Link>
+                  </li>
+                  <li>
+                      <Link to='/profile'>Profile</Link>
+                  </li>
+                  <li>
+                      <Link to='/settings'>Settings</Link>
+                  </li>
                   </Typography>
                 </MenuItem>
               ))}
@@ -117,7 +133,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            StarStream
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
