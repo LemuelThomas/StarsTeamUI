@@ -1,8 +1,13 @@
 import { SyntheticEvent, useState } from "react";
 import { RegisterFormUser } from "../models/register-form-user";
-import { Link } from 'react-router-dom' 
+import { Link, Navigate } from 'react-router-dom' 
+import { LoggedInUserType } from "../models/logged-in-user";
 
-function Register(props: {}) {
+interface IRegisterProps {
+    currentUser: LoggedInUserType | undefined
+}
+
+function Register(props: IRegisterProps) {
 
     const [registerFormData, updateRegisterFormData] = useState<RegisterFormUser>({
         firstName: '',
@@ -40,9 +45,12 @@ function Register(props: {}) {
         console.log(registerFormData);
     }
 
-    return(<>
+    return(
+        props.currentUser ? <Navigate to="/"/> :
+    <>
         <h4>Register</h4>
         <Link to={'/'}>Homepage</Link>
+        <Link to={'/login'}>Login</Link>
 
         <hr></hr>
         <fieldset>

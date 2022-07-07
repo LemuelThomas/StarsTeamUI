@@ -2,21 +2,13 @@ import { shouldForwardProp } from '@mui/styled-engine';
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { LoggedInUserType } from '../models/logged-in-user';
 import ProfileScreen from './ProfileScreen';
 
 
-
-interface IContentData {
-  results: ContentDataType;
-}
-
-interface IContent {
-  movies: ContentType;
-}
-
-type ContentDataType = {
-  results: ContentType[];
+interface IHomepageProps {
+  currentUser: LoggedInUserType | undefined
 }
 
 type ContentType = {
@@ -27,7 +19,7 @@ type ContentType = {
   backdrop_path: string;
 }
 
-export default function Homepage() {
+export default function Homepage(props: IHomepageProps) {
 
   const [movieData, setMovieData] = useState<ContentType[] | null>([])
 
@@ -56,7 +48,7 @@ export default function Homepage() {
   }, [])
 
   return (
-
+    !props.currentUser ? <Navigate to="/login"/> :
     <>
       <h1 className='home_title'>STARSTREAM</h1>
       <Link to={'/movies'}>Movies</Link>
@@ -64,6 +56,8 @@ export default function Homepage() {
       <Link to={'/login'}>Login</Link>
       <Link to={'/profile'}>Profile</Link>
       <Link to={'/shows'}>Shows</Link>
+      <Link to={'/faqs'}>Faq's</Link>
+      <Link to={'/watchlist'}>Watch List</Link> 
 
       <h3>Featured</h3>
       <div className="content_container">

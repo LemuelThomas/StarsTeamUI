@@ -1,6 +1,12 @@
 import { FAQs, Display_Image, IMoreFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
 import render from "react";
+import { LoggedInUserType } from "../models/logged-in-user";
+import { Navigate } from "react-router-dom";
+
+interface IDisplayProps {
+  currentUser: LoggedInUserType | undefined;
+}
 
 let newfaqs = new FAQs();
 newfaqs.question_text = " Question: What are the keys to the universe?\n";
@@ -20,7 +26,7 @@ newfaqs_1.answer_text =
    different archangels and other angelic beings, cosmic masters, and wisdom centers. An exploration of spiritual laws,\
     this is a fascinating and important look at energies that manifest as sound resonances and what humanity can do to access them..";
 
-function Display_FAQs() {
+function Display_FAQs(props: IDisplayProps) {
   //-- casting the onject from an interface to a state.
   const [FAQs, setFAQs] = useState([] as IMoreFAQs[]);
   useEffect(() => {
@@ -32,7 +38,9 @@ function Display_FAQs() {
       });
   }, []); // return an empty array.
 
-  return (
+  return !props.currentUser ? (
+    <Navigate to="/login" />
+  ) : (
     <>
       <h1>
         <div className="headerbar">FAQs</div>
