@@ -1,5 +1,6 @@
-import { FAQs, IFAQs } from "../models/FAQs";
+import { FAQs, IFAQs, IMoreFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
+import render from "react";
 
 let newfaqs = new FAQs();
 newfaqs.question_text = " Question: What are the keys to the universe?\n";
@@ -21,9 +22,9 @@ newfaqs_1.answer_text =
 
 function Display_FAQs() {
   //-- casting the onject from an interface to a state.
-  const [FAQs, setFAQs] = useState([] as IFAQs[]);
+  const [FAQs, setFAQs] = useState([] as IMoreFAQs[]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
+    fetch("http://localhost:5000/MovieApp//api/1.0/faqs")
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
@@ -37,24 +38,30 @@ function Display_FAQs() {
         <div className="headerbar">FAQs</div>
       </h1>
       <br></br>
-      {newfaqs.getAnswers()}
+      <h2>{newfaqs.getQuestions()}</h2>
+      <h2>{newfaqs.getAnswers()}</h2>
       <br></br>
 
       <h1>
         <div className="middlebar">-------------------</div>
       </h1>
-      {newfaqs_1.getQuestions()}
       <br></br>
-      {newfaqs_1.getAnswers()}
+      <h2> {newfaqs_1.getQuestions()}</h2>
+      <h2> {newfaqs_1.getAnswers()}</h2>
+
       <br></br>
 
       <h1>
         <div className="bottombar">
           {FAQs.map((faqs) => (
-            <div key={faqs.id}>{faqs.title}</div>
+            <div key={faqs.faq_id}>{faqs.faq_question}</div>
           ))}
         </div>
       </h1>
+      <h1>
+        <div></div>
+      </h1>
+      <br></br>
     </>
   );
 }
