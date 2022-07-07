@@ -55,15 +55,28 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     username: string
   }
 
-  const rows = [
-    createData(1, 'Brother-D'),
-    createData(2, 'Aunty')
-  ];
+ 
 
-  
-  
+let rows = new Array<makeData>();  //<makeData>[];  
 function ProfileScreen(props: IProfileProps) {
-
+  console.log(props.currentUser?.authAccUsers)
+  
+  // const rows = [
+    // while(props.currentUser?.authAccUsers != undefined){
+    if (props.currentUser && props.currentUser.authAccUsers) {
+      let i = 0;
+      for(let loopUser of props.currentUser.authAccUsers){
+        rows.push({UID:i++,username:loopUser}as makeData); // cast loopUser as makeData and push to add it to array
+        // rows = [
+        //   //createData()
+        // ]
+        
+      }
+    }
+  
+  // createData(1, 'Brother-D'),
+    // createData(2, 'Aunty')
+  // ];
     return (
       !props.currentUser ? <Navigate to="/login"/> :
     <>
