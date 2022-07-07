@@ -39,10 +39,10 @@ export default function Settings(props: ISettingsProps){
         lastName: '', 
         username: '', 
         password: '', 
-        age: '', 
-        Subscription: undefined
+        age: '',
+        Subscription: undefined,
+        AccUsers: ''
     });
-    console.log(user.user)
     // useEffect(() => {
     //     fetch(`localhost:5000/MovieApp/main/`)
     //     .then(resp => resp.json()).then(data => (
@@ -60,11 +60,12 @@ export default function Settings(props: ISettingsProps){
             </div>
             <div className = 'Settingsbody'>
                 <h2>Profile</h2>
-                <p>Name: {user.user.firstName} {user.user.lastName} </p>
-                <p>Username: {user.user.email}</p>
-                <p>Password: {user.user.password}</p>
-                <p>Age: {user.age}</p>
-                <p>Subscription: </p>
+                <p>Name: {props.currentUser.authFirstName} {props.currentUser.authLastName} </p>
+                <p>Username: {props.currentUser.authEmail}</p>
+                <p>Password: {props.currentUser.authPassword}</p>
+                <p> Age: {props.currentUser.authAge.toString()} </p>
+                <p>Subscription: {props.currentUser.authSubscription} </p>
+                {/* <p>Users: {props.currentUser.authAccUsers}</p> */}
             </div>
             <div className = 'settingsButton'>
                 <Grid container justifyContent={"center"}>
@@ -72,7 +73,6 @@ export default function Settings(props: ISettingsProps){
                     Logout
                 </Button>
                 </Grid>
-                
             </div>
         </>
             

@@ -6,4 +6,5 @@ export type LoggedInUserType = {
   authPassword: string;
   authAge: Date;
   authSubscription: number;
+  authAccUsers: string[];
 }
