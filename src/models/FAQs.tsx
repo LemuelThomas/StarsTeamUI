@@ -29,19 +29,14 @@ export interface IMoreFAQs {
   faq_question: string | undefined;
   faq_answer: string | undefined;
 }
-export class MoreFAQs extends Component {
-  state: IMoreFAQs = {
-    faq_id: 0,
-    faq_question: " ",
-    faq_answer: " ",
-  };
+export class Display_Image extends Component {
+  url: string = "https://picsum.photos/1500/150";
 
   render() {
     return (
       <div>
         <h1>
-          {this.state.faq_question}
-          {this.state.faq_answer}
+          <img src={this.url} alt="" />
         </h1>
       </div>
     );

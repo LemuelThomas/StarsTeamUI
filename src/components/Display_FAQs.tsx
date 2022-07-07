@@ -1,4 +1,4 @@
-import { FAQs, IFAQs, IMoreFAQs } from "../models/FAQs";
+import { FAQs, Display_Image, IMoreFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
 import render from "react";
 
@@ -37,6 +37,11 @@ function Display_FAQs() {
       <h1>
         <div className="headerbar">FAQs</div>
       </h1>
+      <h1>
+        <span>
+          <Display_Image />
+        </span>
+      </h1>
       <br></br>
       <h2>{newfaqs.getQuestions()}</h2>
       <h2>{newfaqs.getAnswers()}</h2>
@@ -54,13 +59,14 @@ function Display_FAQs() {
       <h1>
         <div className="bottombar">
           {FAQs.map((faqs) => (
-            <div key={faqs.faq_id}>{faqs.faq_question}</div>
+            <div key={faqs.faq_id}>
+              <p>{faqs.faq_question}</p>
+              <p> {faqs.faq_answer} </p>
+            </div>
           ))}
         </div>
       </h1>
-      <h1>
-        <div></div>
-      </h1>
+
       <br></br>
     </>
   );
