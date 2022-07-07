@@ -2,11 +2,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - touch ~/.bashrc
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-      - source ~/.bashrc
-      - nvm install --lts
-      - nvm use --lts
+      - curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
       - node --version
   pre_build:
     commands:
