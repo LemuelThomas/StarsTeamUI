@@ -2,8 +2,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo yum update -y
-      - sudo yum install -y nodejs 
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+      - source ~/.bashrc
+      - nvm install --lts
+      - nvm use --lts
       - node --version
   pre_build:
     commands:
