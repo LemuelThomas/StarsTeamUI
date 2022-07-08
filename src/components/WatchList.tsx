@@ -18,7 +18,7 @@ function WatchList(props: IMovieProps) {
 
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/MovieApp/watchlist/movies/${props.id}`).then(resp => {
+        fetch(`http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp/watchlist/movies/${props.id}`).then(resp => {
             return resp.json();
         }).then(watchlist => {
             const list = watchlist as WatchListResponse[];
@@ -31,8 +31,8 @@ function WatchList(props: IMovieProps) {
     return (
         !props.currentUser ? <Navigate to="/login"/> :
         <>
-            <Link to={'/'}>Homepage</Link>
-            <Link to={'/register'}>Register</Link>
+            {/* <Link to={'/'}>Homepage</Link>
+            <Link to={'/register'}>Register</Link> */}
             <h2>Watch List</h2>
             <WatchListMovies movieIds={movieIds} />
         </>);

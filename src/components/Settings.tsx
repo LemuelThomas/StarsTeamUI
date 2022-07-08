@@ -68,11 +68,11 @@ export default function Settings(props: ISettingsProps){
                 {/* <p>Users: {props.currentUser.authAccUsers}</p> */}
             </div>
             <div className = 'settingsButton'>
-                <Grid container justifyContent={"center"}>
+                {/* <Grid container justifyContent={"center"}>
                     <Button variant="contained" color="error" href="#contained-buttons">
                     Logout
                 </Button>
-                </Grid>
+                </Grid> */}
             </div>
         </>
             
