@@ -65,6 +65,8 @@ function ProfileScreen(props: IProfileProps) {
     // while(props.currentUser?.authAccUsers != undefined){
     if (props.currentUser && props.currentUser.authAccUsers) {
       let i = 0;
+      rows.pop()
+      rows.pop()
       for(let loopUser of props.currentUser.authAccUsers){
         rows.push({UID:i++,username:loopUser}as makeData); // cast loopUser as makeData and push to add it to array
         // rows = [
