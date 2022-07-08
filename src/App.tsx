@@ -20,9 +20,11 @@ function App(): JSX.Element {
 
   const [authUser, setAuthUser] = useState<LoggedInUserType>()
 
+
   return (
     <>
 
+<Nav /> 
       <Routes>
         <Route path='/' element={<Homepage  currentUser={authUser} />} />
         <Route path='/register' element={<Register currentUser={authUser} />} />

@@ -13,8 +13,7 @@ function GetMovie(props: IMovieProps) {
     return (
         !props.currentUser ? <Navigate to="/login"/> :
         <>
-            <Link to={'/'}>Homepage</Link>
-            <Link to={'/register'}>Register</Link>
+            
             <h2>Movies</h2>
             <MoviesGetPopular />
             <MoviesGetTop />
