@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 
-const pages = ['Login', 'Settings', 'Watchlist', 'FAQs', 'Shows','Movies'];
+const pages = ['Login', 'Settings', 'Watchlist', 'FAQs', 'Shows','GetMovie'];
 const settings = ['Profile', 'Settings', 'Login', 'Shows', 'Movies'];
 
 const ResponsiveAppBar = () => {
