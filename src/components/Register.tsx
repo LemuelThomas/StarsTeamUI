@@ -49,8 +49,7 @@ function Register(props: IRegisterProps) {
         props.currentUser ? <Navigate to="/"/> :
     <>
         <h4>Register</h4>
-        <Link to={'/'}>Homepage</Link>
-        <Link to={'/login'}>Login</Link>
+    
 
         <hr></hr>
         <fieldset>

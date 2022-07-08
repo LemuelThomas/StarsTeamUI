@@ -14,10 +14,7 @@ function getAllTvShows (props: IShowsProps) {
         !props.currentUser ? <Navigate to="/login"/> :
     <>
         <div className="link">
-            <Link to={'/'}>Homepage </Link>
-            <Link to={'/movies'}>Movies </Link>
-            <Link to={'/login'}>Login </Link>
-            <Link to={'/register'}>Register</Link>
+            
             <div className="title"><h2>Shows</h2>
                 <ShowsPopular />
                 <ShowsAiring />
