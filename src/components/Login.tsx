@@ -31,7 +31,12 @@ function Login(props: ILoginProps) {
         }
 
         try {
+<<<<<<< HEAD
+            let resp = await fetch('http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp/auth'
+            , {
+=======
             let resp = await fetch('http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp/auth', {
+>>>>>>> 2066b680d6a0c08192d3c2886e8d7ae3cfd8fc10
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
