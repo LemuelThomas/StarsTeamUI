@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams  } from 'react-router-dom'
+import { LoggedInUserType } from '../models/logged-in-user';
 
 
 type Props = {
@@ -13,8 +14,11 @@ type Props = {
   videos: [];
 }
 
+interface IDetailsProps {
+  currentUser: LoggedInUserType | undefined
+}
 
-export default function MovieDetails() {
+export default function MovieDetails(props: IDetailsProps) {
   
     const {id} = useParams()
       
@@ -30,9 +34,10 @@ export default function MovieDetails() {
       setKeyData(res.data.videos.results[0].key)
       
     })
-  }, []) 
+  }, [])
   
   return (
+    !props.currentUser ? <Navigate to="/login"/> :
     <>
     <Link to={'/'}>Homepage</Link>
       <h2>MovieDetails</h2>
