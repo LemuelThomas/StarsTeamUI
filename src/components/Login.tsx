@@ -31,7 +31,7 @@ function Login(props: ILoginProps) {
         }
 
         try {
-            let resp = await fetch('Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp/auth', {
+            let resp = await fetch('http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp/auth', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
