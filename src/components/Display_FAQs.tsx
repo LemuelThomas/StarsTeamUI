@@ -30,7 +30,9 @@ function Display_FAQs(props: IDisplayProps) {
   //-- casting the onject from an interface to a state.
   const [FAQs, setFAQs] = useState([] as IMoreFAQs[]);
   useEffect(() => {
-    fetch("http://localhost:5000/MovieApp//api/1.0/faqs")
+    fetch(
+      "http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp//api/1.0/faqs"
+    )
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
