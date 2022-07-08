@@ -1,10 +1,11 @@
-import { FAQs, IFAQs } from "../models/FAQs";
+import { FAQs, Display_Image, IMoreFAQs } from "../models/FAQs";
 import { useEffect, useState } from "react";
+import render from "react";
 import { LoggedInUserType } from "../models/logged-in-user";
-import { Navigate } from 'react-router-dom'
+import { Navigate } from "react-router-dom";
 
 interface IDisplayProps {
-  currentUser: LoggedInUserType | undefined
+  currentUser: LoggedInUserType | undefined;
 }
 
 let newfaqs = new FAQs();
@@ -27,9 +28,11 @@ newfaqs_1.answer_text =
 
 function Display_FAQs(props: IDisplayProps) {
   //-- casting the onject from an interface to a state.
-  const [FAQs, setFAQs] = useState([] as IFAQs[]);
+  const [FAQs, setFAQs] = useState([] as IMoreFAQs[]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
+    fetch(
+      "http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp//api/1.0/faqs"
+    )
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
@@ -37,31 +40,44 @@ function Display_FAQs(props: IDisplayProps) {
       });
   }, []); // return an empty array.
 
-  return (
-    !props.currentUser ? <Navigate to="/login"/> :
+  return !props.currentUser ? (
+    <Navigate to="/login" />
+  ) : (
     <>
       <h1>
         <div className="headerbar">FAQs</div>
       </h1>
+      <h1>
+        <span>
+          <Display_Image />
+        </span>
+      </h1>
       <br></br>
-      {newfaqs.getAnswers()}
+      <h2>{newfaqs.getQuestions()}</h2>
+      <h2>{newfaqs.getAnswers()}</h2>
       <br></br>
 
       <h1>
         <div className="middlebar">-------------------</div>
       </h1>
-      {newfaqs_1.getQuestions()}
       <br></br>
-      {newfaqs_1.getAnswers()}
+      <h2> {newfaqs_1.getQuestions()}</h2>
+      <h2> {newfaqs_1.getAnswers()}</h2>
+
       <br></br>
 
       <h1>
         <div className="bottombar">
           {FAQs.map((faqs) => (
-            <div key={faqs.id}>{faqs.title}</div>
+            <div key={faqs.faq_id}>
+              <p>{faqs.faq_question}</p>
+              <p> {faqs.faq_answer} </p>
+            </div>
           ))}
         </div>
       </h1>
+
+      <br></br>
     </>
   );
 }
