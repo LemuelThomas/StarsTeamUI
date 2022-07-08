@@ -51,13 +51,7 @@ export default function Homepage(props: IHomepageProps) {
     !props.currentUser ? <Navigate to="/login"/> :
     <>
       <h1 className='home_title'>STARSTREAM</h1>
-      <Link to={'/movies'}>Movies</Link>
-      <Link to={'/register'}>Register</Link>
-      <Link to={'/login'}>Login</Link>
-      <Link to={'/profile'}>Profile</Link>
-      <Link to={'/shows'}>Shows</Link>
-      <Link to={'/faqs'}>Faq's</Link>
-      <Link to={'/watchlist'}>Watch List</Link> 
+      
 
       <h3>Featured</h3>
       <div className="content_container">

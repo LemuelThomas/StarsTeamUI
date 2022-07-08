@@ -6,7 +6,7 @@ export function addMovieWatchList(userid:number, video:number, genre:number[]) {
     let Type = new videoType(1, "Movie");
     let addWatchlist = new WatchListRequest(video,userid,Type,genre)
 
-    fetch(`http://localhost:5000/MovieApp/watchlist/movies`,{
+    fetch(`http://Starsteamapi-env-2.eba-sjpuj72h.us-east-1.elasticbeanstalk.com/MovieApp/watchlist/movies`,{
         method:'POST',
         headers: {
             'Content-Type': 'application/json'
