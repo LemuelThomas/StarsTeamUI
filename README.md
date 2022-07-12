@@ -9,7 +9,7 @@
 
 *Starstream app:* A media application developed as a mock streaming service. The functionality of the app as is provides an array of popular and newly released movies and Tv shows using the TMDB API. Interested parties are able to sign-up and register an account. Registered users are then able to login and proceed to preview the trailers of the content available on demand. Additional functionality of the app includes the ability to add user selected content to a watchlist, preview their account settings, a profile section where sub-users can enjoy the same service authorized by a main user, a nav bar for easier navigation of the app, FAQs.
 
-[Link to backend](https://github.com/LemuelThomas/StarsTeamAPI)
+[Link to backend](https://github.com/LemuelThomas/StarsTeamAPI)\
 [Link to frontend](https://github.com/LemuelThomas/StarsTeamUI)
 
 ***
